@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { auth } from "firebase/app";
-import { takeLast, tap, map, flatMap } from "rxjs/operators";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: "app-root",
@@ -44,7 +44,9 @@ export class AppComponent {
   }
 
   chatSend(message: string) {
-    this.items[0].push({ message: message, name: this.name.facebook.displayName });
+    // this.messages = [{ message: message, user: this.name.displayName },...];
+    this.messages.unshift({ message: message, user: this.name.displayName });
+    // this.messages.push({ message: message, user: this.name.displayName });
     this.msgVal = "";
   }
 }
