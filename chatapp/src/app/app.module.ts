@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyDJM4FZkLkXgiSpKF2h0wRAxY-qD7ieXK0",
+  apiKey: "xxx",
   authDomain: "chat-eszapet.firebaseapp.com",
   databaseURL: "https://chat-eszapet.firebaseio.com",
   projectId: "chat-eszapet",
