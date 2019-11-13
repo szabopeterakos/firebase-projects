@@ -19,21 +19,23 @@ export class AppComponent {
   msgVal: string = "";
 
   constructor(public db: AngularFireDatabase, public afAuth: AngularFireAuth) {
-    this.itemsRef = db.list("/",ref=>ref.limitToLast(4));
+    this.itemsRef = db.list("/", ref => ref.limitToLast(4));
     this.items = this.itemsRef.snapshotChanges().pipe(
       map(changes => {
-        return changes.map(c => ({ user: c.payload.val().name, message: c.payload.val().message }));
+        return changes.map(c => ({
+          user: c.payload.val().user,
+          message: c.payload.val().message
+        }));
       })
     );
     this.afAuth.user.subscribe(x => {
       this.name = x;
-      this.items.subscribe((array)=>{
+      this.items.subscribe(array => {
         array.forEach(element => {
           this.messages.push(element);
         });
-        console.log(`this is an array ${array}`)
-      }
-      );
+        console.log(array);
+      });
     });
   }
   login() {
@@ -44,10 +46,10 @@ export class AppComponent {
   }
 
   chatSend(message: string) {
-    // this.messages = [{ message: message, user: this.name.displayName },...];
-    this.messages.unshift({ message: message, user: this.name.displayName });
-    // this.messages.push({ message: message, user: this.name.displayName });
+    const massageObject = { message: message, user: this.name.displayName };
     this.msgVal = "";
+    this.messages = [];
+    this.itemsRef.push(massageObject);
   }
 }
 

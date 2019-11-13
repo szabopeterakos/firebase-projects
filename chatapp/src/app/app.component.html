@@ -11,9 +11,8 @@
     [(ngModel)]="msgVal"
   />
 
-  <div class="chat-container" *ngFor="let item of messages">
+  <div class="chat-container" *ngFor="let item of items | async">
     <a href="#">{{ item.user }}</a>
-
     <p>{{ item.message }}</p>
   </div>
 </div>
