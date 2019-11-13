@@ -14,7 +14,7 @@ export class AppComponent {
   title = "chatapp";
   itemsRef: AngularFireList<any>;
   items: Observable<Message[]>;
-  messages: Message[] = [];
+  // messages: Message[] = [];
   name: any;
   msgVal: string = "";
 
@@ -22,20 +22,18 @@ export class AppComponent {
     this.itemsRef = db.list("/", ref => ref.limitToLast(4));
     this.items = this.itemsRef.snapshotChanges().pipe(
       map(changes => {
-        return changes.map(c => ({
-          user: c.payload.val().user,
-          message: c.payload.val().message
-        }));
+        return changes.map(c => ({ user: c.payload.val().user, message: c.payload.val().message }));
       })
     );
     this.afAuth.user.subscribe(x => {
       this.name = x;
-      this.items.subscribe(array => {
-        array.forEach(element => {
-          this.messages.push(element);
-        });
-        console.log(array);
-      });
+      // this.items.subscribe((array)=>{
+      //   array.forEach(element => {
+      //     this.messages.push(element);
+      //   });
+      //   console.log(`this is an array ${array}`)
+      // }
+      // );
     });
   }
   login() {
@@ -46,10 +44,11 @@ export class AppComponent {
   }
 
   chatSend(message: string) {
-    const massageObject = { message: message, user: this.name.displayName };
+    // this.messages = [{ message: message, user: this.name.displayName },...];
+    // this.messages.unshift({ message: message, user: this.name.displayName });
+    // this.messages.push({ message: message, user: this.name.displayName });
+    this.itemsRef.push({ message: message, user: this.name.displayName });
     this.msgVal = "";
-    this.messages = [];
-    this.itemsRef.push(massageObject);
   }
 }
 
