@@ -10,17 +10,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { envConfig,firebaseConfig } from "./../../application-configuration";
-
-export const firebaseConfigDefault = {
-  apiKey: firebaseConfig.apiKey,
-  authDomain: "footballer-app.firebaseapp.com",
-  databaseURL: "https://footballer-app.firebaseio.com",
-  projectId: "footballer-app",
-  storageBucket: "footballer-app.appspot.com",
-  messagingSenderId: "652372385355",
-  appId: "1:652372385355:web:78d3402d8516d7e54ef7ce"
-};
+import { firebaseConfig } from "./../../application-configuration";
 
 @NgModule({
   declarations: [AppComponent],
