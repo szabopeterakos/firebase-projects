@@ -1,0 +1,12 @@
+<section class="border">
+  
+  <div class="row">
+    <input class="columns" />
+  </div>
+  <div class="row columns">
+    <div class="chat-container" *ngFor="let message of messages">
+      <a href="#">{{ message.id }}</a>
+      <p>{{ message.message }}</p>
+    </div>
+  </div>
+</section>

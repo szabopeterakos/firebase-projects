@@ -11,9 +11,12 @@ import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { firebaseConfig } from "./../../application-configuration";
+import { MessagesComponent } from './messages/messages.component';
+import { HeaderComponent } from './header/header.component';
+import { CenterComponent } from './center/center.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MessagesComponent, HeaderComponent, CenterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
