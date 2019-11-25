@@ -5,6 +5,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { auth } from "firebase/app";
 import { map, tap } from "rxjs/operators";
 import { AngularFirestore } from "@angular/fire/firestore";
+import { Message, AppSetting, User } from "./database.model";
 
 @Component({
   selector: "app-root",
@@ -25,25 +26,4 @@ export class AppComponent {
     this.users = db.collection<User>("users").valueChanges();
     this.appSettings = db.collection<AppSetting>("app-settings").valueChanges();
   }
-}
-
-interface Message {
-  id: string;
-  message: string;
-}
-
-interface User {
-  displayLanguage: string;
-  displayName: string;
-  guests: number;
-  id: number;
-  isAdmin: boolean;
-  status: string;
-}
-
-interface AppSetting {
-  date: Date;
-  eventStatus: string;
-  eventTitle: string;
-  minTreshold: number;
 }
