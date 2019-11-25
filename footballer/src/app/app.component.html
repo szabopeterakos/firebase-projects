@@ -1,18 +1,24 @@
 <div class="row columns">
 
-  <div class="chat-container" *ngFor="let item of messages | async">
-    <a href="#">{{ item.user }}</a>
-    <p>{{ item.message }}</p>
+  <div class="chat-container" *ngFor="let message of messages | async">
+    <a href="#">{{ message.id }}</a>
+    <p>{{ message.message }}</p>
   </div>
 
-  <div class="chat-container" *ngFor="let item of users | async">
-    <a href="#">{{ item.displayName }}</a>
-    <!-- <p>{{ item.message }}</p> -->
+  <div class="chat-container" *ngFor="let user of users | async">
+    <a href="#">{{ user.displayName }}</a>
+    <li>{{user.displayName}}</li>
+    <li>{{user.displayLanguage}}</li>
+    <li>{{user.guests}}</li>
+    <li>{{user.id}}</li>
+    <li>{{user.isAdmin}}</li>
+    <li>{{user.status}}</li>
   </div>
 
-  <div class="chat-container" *ngFor="let item of appSettings | async">
-    <a href="#">{{ item.date }}</a><br/>
-    <a href="#">{{ item.eventStatus }}</a>
-    <!-- <p>{{ item.message }}</p> -->
+  <div class="chat-container" *ngFor="let setting of appSettings | async">
+    <a href="#">{{ setting.date }}</a><br/>
+    <a href="#">{{ setting.eventStatus }}</a><br/>
+    <a>{{ setting.eventTitle }}</a><br/>
+    <a>{{ setting.minTreshold }}</a><br/>
   </div>
 </div>
