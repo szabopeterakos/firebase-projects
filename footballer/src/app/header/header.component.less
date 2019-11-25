@@ -1,5 +1,41 @@
+@import "./../../colors.less";
+
 :host {
-    section{
-        height: 10vh;
+  // common in sections
+  color: @white;
+  section {
+    user-select: none;
+  }
+
+  // logic sections
+  .userName {
+    font-size: 5vw;
+  }
+  .hints {
+    font-size: 3.3vw;
+    text-align: right;
+  }
+  .plusMember {
+    font-size: 3.3vw;
+  }
+  .activeMembers {
+    app-members-chart {
+      float: right;
+      width: 50%;
     }
+  }
+
+  // avatar
+  .avatar {
+    img {
+      border: 4px solid white;
+      background-color: white;
+    }
+    vertical-align: middle;
+    height: 80px;
+    min-width: 80px;
+    width: 80px;
+    padding: 2px;
+    border-radius: 50%;
+  }
 }

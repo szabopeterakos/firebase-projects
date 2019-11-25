@@ -14,9 +14,10 @@ import { firebaseConfig } from "./../../application-configuration";
 import { MessagesComponent } from './messages/messages.component';
 import { HeaderComponent } from './header/header.component';
 import { CenterComponent } from './center/center.component';
+import { MembersChartComponent } from './members-chart/members-chart.component';
 
 @NgModule({
-  declarations: [AppComponent, MessagesComponent, HeaderComponent, CenterComponent],
+  declarations: [AppComponent, MessagesComponent, HeaderComponent, CenterComponent, MembersChartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

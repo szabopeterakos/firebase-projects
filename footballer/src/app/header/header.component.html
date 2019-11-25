@@ -1,15 +1,17 @@
-<section class="border row">
-  <div class="border avatar columns small-2">
-    avatar
+<section class="row padding-x">
+  <div class="avatar columns small-2">
+        <img src="https://image.flaticon.com/icons/svg/2253/2253566.svg" alt="Avatar" class="avatar">
   </div>
-  <div class="avatar-container columns">
+  <div class="header-container columns">
     <div class="row">
-      <div class="columns userName">username</div>
-      <div class="columns thesholdHints">thesholdHint message</div>
+      <div class="columns small-5 userName">{{ user.displayName }}</div>
+      <div class="columns hints"><small>{{hint}}</small></div>
     </div>
     <div class="row">
-      <div class="columns plusMember">+2 with me</div>
-      <div class="columns activeMembers">activeMembers</div>
+      <div class="columns small-7 plusMember small"><small>{{plusMember}}</small></div>
+      <div class="columns activeMembers">
+        <app-members-chart></app-members-chart>
+      </div>
     </div>
   </div>
 </section>

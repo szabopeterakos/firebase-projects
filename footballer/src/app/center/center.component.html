@@ -1,11 +1,23 @@
-<section class="border">
-  
-    <div class="border row">
-        <div class="columns">footballer title</div>
-        <div class="columns">event date: 1990-23-55</div>
+<section class="container">
+  <div class="row">
+    <div class="columns">
+      <div class="logoTitle">
+        Football in Tuesdays
+        <img class="logo" src="../../assets/logo5.svg" alt="{{ title }}" />
+      </div>
     </div>
+    <div class="columns calendar">
+      <img
+        src="https://image.flaticon.com/icons/svg/1171/1171977.svg"
+        alt="{{ eventDate }}"
+      />
+      <span>
+        {{date}}
+      </span>
+    </div>
+  </div>
 
-  <div class="border row">
+  <div class="row padding-x">
     <button class="button columns">Join</button>
     <button class="button columns">Skip</button>
   </div>

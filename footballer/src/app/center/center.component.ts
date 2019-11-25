@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./center.component.less']
 })
 export class CenterComponent implements OnInit {
-
+  title = 'footballer';
+  eventDate = 'event date:';
+  date = '1990-03-23';
   constructor() { }
 
   ngOnInit() {
