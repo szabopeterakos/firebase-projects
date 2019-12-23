@@ -1,0 +1,22 @@
+<p>I am roboro {{ title }}</p>
+
+<div>counter: {{ counter }}</div>
+
+<button class="btn" (click)="handleSelection('prev')">previous</button>
+<ng-container *ngFor="let item of list; let i = index">
+  <button
+    class="btn"
+    [ngClass]="{ btnActive: counter === i }"
+    (click)="handleSelection(i)"
+  >
+    {{ item }}
+  </button>
+</ng-container>
+<button class="btn" (click)="handleSelection('next')">next</button>
+
+<swiper #swiper class="border" (indexChange)="onIndexChange($event)">
+  <div class="tab border">dash</div>
+  <div class="tab border">best</div>
+  <div class="tab border">trend</div>
+  <div class="tab border">five-g</div>
+</swiper>
