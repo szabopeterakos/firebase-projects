@@ -8,7 +8,7 @@ import { EventbusService } from "../eventbus.service";
 })
 export class ModalComponent implements OnInit {
   constructor(private eventService: EventbusService) {}
-  hide = false;
+  hide = true;
   text = "notificaiton page";
 
   ngOnInit() {

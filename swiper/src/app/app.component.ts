@@ -7,6 +7,7 @@ import {
 } from "@angular/core";
 import { element } from "protractor";
 import { EventbusService } from "./eventbus.service";
+import { SwiperConfigInterface } from "ngx-swiper-wrapper/dist/lib/swiper.interfaces";
 
 @Component({
   selector: "app-root",
@@ -19,6 +20,18 @@ export class AppComponent implements AfterViewInit {
   counter;
   hide = true;
   list = ["dashboard", "best", "rending", "5g"];
+  config: SwiperConfigInterface = {
+    speed: 500,
+    spaceBetween: 100,
+    direction: "horizontal",
+    touchRatio: 2,
+    followFinger: true,
+    threshold: 30,
+    iOSEdgeSwipeThreshold: 30,
+    roundLengths: true,
+    effect: "slide",
+    grabCursor: true
+  };
   constructor(private eventService: EventbusService) {
     console.time("a");
   }
