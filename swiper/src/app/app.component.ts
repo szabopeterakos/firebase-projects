@@ -6,6 +6,7 @@ import {
   AfterViewInit
 } from "@angular/core";
 import { element } from "protractor";
+import { EventbusService } from "./eventbus.service";
 
 @Component({
   selector: "app-root",
@@ -16,9 +17,10 @@ export class AppComponent implements AfterViewInit {
   title = "swiper";
   @ViewChild("swiper", { static: false }) swiperRef;
   counter;
+  hide = true;
   isActive = this.counter;
   list = ["dashboard", "best", "rending", "5g"];
-  constructor() {
+  constructor(private eventService: EventbusService) {
     console.time("a");
   }
 
@@ -26,10 +28,6 @@ export class AppComponent implements AfterViewInit {
     console.timeEnd("a");
     const element = this.swiperRef.directiveRef.elementRef.nativeElement;
     setTimeout(() => {
-      element.swiper.slideNext(undefined, () => {
-        const activeind = element.swiper.activeIndex;
-        console.log("TCL: AppComponent -> activeind", activeind);
-      });
       console.dir(element.swiper);
       console.dir(element.swiper.activeIndex);
     }, 0);
@@ -54,5 +52,20 @@ export class AppComponent implements AfterViewInit {
         element.swiper.slideTo(e);
         break;
     }
+  }
+
+  showAppModalComponent() {
+    const modal = document.querySelector(".container");
+    // modal.classList.remove("hide");
+    console.log("TCL: AppComponent -> showAppModalComponent -> modal", modal);
+  }
+
+  testClicker() {
+    // this.swiperRef.directiveRef.setIndex(0);
+    this.eventService.emit({ name: "notificaitonPage", state: true });
+    console.log(
+      "this is the current index: ",
+      this.swiperRef.directiveRef.getIndex(0)
+    );
   }
 }

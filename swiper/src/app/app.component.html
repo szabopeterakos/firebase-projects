@@ -1,4 +1,5 @@
 <p>I am roboro {{ title }}</p>
+<i (click)="showAppModalComponent()">&#9786;</i>
 
 <div>counter: {{ counter }}</div>
 
@@ -14,9 +15,14 @@
 </ng-container>
 <button class="btn" (click)="handleSelection('next')">next</button>
 
+<!-- TODO the last indec change is not working :) -->
 <swiper #swiper class="border" (indexChange)="onIndexChange($event)">
   <div class="tab border">dash</div>
   <div class="tab border">best</div>
   <div class="tab border">trend</div>
   <div class="tab border">five-g</div>
 </swiper>
+
+<button (click)="testClicker()">TESTER</button>
+
+<app-modal></app-modal>
