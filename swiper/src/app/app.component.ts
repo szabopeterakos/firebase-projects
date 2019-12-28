@@ -18,7 +18,6 @@ export class AppComponent implements AfterViewInit {
   @ViewChild("swiper", { static: false }) swiperRef;
   counter;
   hide = true;
-  isActive = this.counter;
   list = ["dashboard", "best", "rending", "5g"];
   constructor(private eventService: EventbusService) {
     console.time("a");
@@ -33,9 +32,9 @@ export class AppComponent implements AfterViewInit {
     }, 0);
   }
 
-  onIndexChange(e) {
-    console.log("index change:", e);
-    this.counter = e;
+  public onIndexChange(index: number): void {
+    this.counter = index;
+    console.log("Swiper index: ", index);
   }
 
   handleSelection(e) {
@@ -52,12 +51,6 @@ export class AppComponent implements AfterViewInit {
         element.swiper.slideTo(e);
         break;
     }
-  }
-
-  showAppModalComponent() {
-    const modal = document.querySelector(".container");
-    // modal.classList.remove("hide");
-    console.log("TCL: AppComponent -> showAppModalComponent -> modal", modal);
   }
 
   testClicker() {

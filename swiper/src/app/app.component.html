@@ -1,5 +1,4 @@
-<p>I am roboro {{ title }}</p>
-<i (click)="showAppModalComponent()">&#9786;</i>
+<p>I am roboro {{ title }} <i>&#9786;</i></p>
 
 <div>counter: {{ counter }}</div>
 
@@ -17,10 +16,7 @@
 
 <!-- TODO the last indec change is not working :) -->
 <swiper #swiper class="border" (indexChange)="onIndexChange($event)">
-  <div class="tab border">dash</div>
-  <div class="tab border">best</div>
-  <div class="tab border">trend</div>
-  <div class="tab border">five-g</div>
+  <div *ngFor="let item of list; let i = index">{{ item }}</div>
 </swiper>
 
 <button (click)="testClicker()">TESTER</button>
