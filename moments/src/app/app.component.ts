@@ -9,14 +9,16 @@ import * as moment_tz from "moment-timezone";
 export class AppComponent implements OnInit {
   DATE_FORMAT = "YYYY.MM.DD HH:mm Z";
   // 2018-02-13
+  startTimestamps = [1518_4800_6000_0, 1518_5196_0000_0, 1518_5610_0000_0];
+
   ngOnInit(): void {
-    this.times[0] = moment_tz(1518480060000)
+    this.times[0] = moment_tz(this.startTimestamps[0])
       .tz("UTC")
       .format(this.DATE_FORMAT);
-    this.times[1] = moment_tz(1518519600000)
+    this.times[1] = moment_tz(this.startTimestamps[1])
       .tz("UTC")
       .format(this.DATE_FORMAT);
-    this.times[2] = moment_tz(1518561000000)
+    this.times[2] = moment_tz(this.startTimestamps[2])
       .tz("UTC")
       .format(this.DATE_FORMAT);
   }
