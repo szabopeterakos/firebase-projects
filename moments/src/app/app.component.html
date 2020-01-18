@@ -8,13 +8,19 @@
     days data <b>0:01-200MB</b> , <b>11:00-500MB</b> , <b>22:30-100MB</b> (this
     is a UNIX timestamp) 'this is the start timestamp 1518480060'
   </p>
-  <p>------------------------------------</p>
 
+  <p>UTC-------------------------------------------------------</p>
   <div *ngFor="let time of times">
-    <h5>{{ time }}</h5>
+    <p>{{ time }}</p>
   </div>
-
-  <p>------------------------------------</p>
+  <p>+10 TIMEOFFSET-------------------------------------------</p>
+  <div *ngFor="let time of timesAmerica">
+    <p>{{ time }}</p>
+  </div>
+  <p>-7 TIMEOFFSET-------------------------------------------</p>
+  <div *ngFor="let time of timesVladi">
+    <p>{{ time }}</p>
+  </div>
 
   <div class="card-container"></div>
 </div>
