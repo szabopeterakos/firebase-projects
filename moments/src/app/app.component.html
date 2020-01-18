@@ -279,18 +279,22 @@
   }
 </style>
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner"></div>
-
 <div class="content" role="main">
   <div class="card highlight-card card-small">
-    <span>{{ title }} app is running!</span>
+    <span>{{ title }} tests</span>
   </div>
 
+  <p>
+    we have 3 data on one day at 1 timezone, but when tz shifted it is like 2
+    days data <b>0:01-200MB</b> , <b>11:00-500MB</b> , <b>22:30-100MB</b> (this
+    is a UNIX timestamp) 'this is the start timestamp 1518480060'
+  </p>
   <p>------------------------------------</p>
+
   <div *ngFor="let time of times">
     <h5>{{ time }}</h5>
   </div>
+
   <p>------------------------------------</p>
 
   <div class="card-container"></div>
