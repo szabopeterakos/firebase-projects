@@ -1,0 +1,56 @@
+<p>tutorial works!</p>
+<button mat-raised-button>hello world</button>
+<button mat-flat-button>hello world</button>
+<button mat-stroked-button>hello world</button>
+
+<button mat-icon-button="">this</button>
+<button mat-fab="">:)</button>
+<button mat-mini-fab=""></button>
+
+<button mat-button="" color="primary">Button</button>
+<button mat-button="" color="warn">warning</button>
+<button mat-button="" color="accent">accent</button>
+<button mat-raised-button="" color="warn" (click)="showSpinner = !showSpinner">
+  spinner
+</button>
+<button
+  mat-raised-button=""
+  color="accent"
+  disableRipple=""
+  (click)="increment()"
+>
+  increment
+</button>
+
+<div>
+  <mat-button-toggle #toogleButton disableRipple checked disabled
+    >click
+  </mat-button-toggle>
+  {{ toogleButton.checked }}
+</div>
+
+<mat-card>
+  <mat-button-toggle-group #group="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="a">A</mat-button-toggle>
+    <mat-button-toggle value="b">B</mat-button-toggle>
+    <mat-button-toggle value="c">C</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{ group.value }}
+  <mat-icon color="warn">grade</mat-icon>
+  <hr />
+  <br />
+  <span
+    [matBadge]="notifications"
+    matBadgePosition="belove before"
+    matBadgeSize="small"
+    matBadgeColor="warn"
+    matBadgeOverlap="false"
+    [matBadgeHidden]="notifications === 0"
+    >Notify</span
+  >
+  <br />
+</mat-card>
+
+<mat-spinner *ngIf="showSpinner"></mat-spinner>
+<br />
+<mat-progress-bar [value]="notifications"></mat-progress-bar>
