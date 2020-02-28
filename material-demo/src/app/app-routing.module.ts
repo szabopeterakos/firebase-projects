@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { NavigationbarComponent } from "./navigationbar/navigationbar.component";
 import { TutorialComponent } from "./tutorial/tutorial.component";
+import { FormComponent } from "./form/form.component";
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
     path: "tutorial",
     component: TutorialComponent
   },
+  { path: "form", component: FormComponent },
   {
     path: "",
     redirectTo: "/tutorial",

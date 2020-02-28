@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-navigationbar',
-  templateUrl: './navigationbar.component.html',
-  styleUrls: ['./navigationbar.component.sass']
+  selector: "app-navigationbar",
+  templateUrl: "./navigationbar.component.html",
+  styleUrls: ["./navigationbar.component.sass"]
 })
 export class NavigationbarComponent implements OnInit {
+  opened = false;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  log(state) {
+    console.log("state:", state);
   }
-
 }

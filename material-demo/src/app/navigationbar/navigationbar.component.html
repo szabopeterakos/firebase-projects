@@ -1,1 +1,61 @@
 <p>navigationbar works!</p>
+
+<mat-toolbar color="primary" class="navbar">
+  <div>code</div>
+  <div>
+    <span>text</span>
+    <span>text</span>
+    <span>text</span>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+    mode="side"
+    [(opened)]="opened"
+    #side
+    (opened)="log('opened')"
+    (closed)="log('closed')"
+    >A</mat-sidenav
+  >
+  <mat-sidenav-content
+    >A mat-sidenav-content
+    <button mat-raised-button="" (click)="opened = !opened">this</button>
+    <button mat-raised-button="" (click)="side.open()">open</button>
+    <button mat-raised-button="" (click)="side.close()">closed</button>
+    <button mat-raised-button="" (click)="side.toggle()">toggle</button>
+    <br />
+
+    <button
+      mat-flat-button=""
+      color="accent"
+      [mat-menu-trigger-for]="matmenu3"
+      [matMenuTriggerData]="{ name: 'lola', hobby: 'no interest' }"
+    >
+      cica
+    </button>
+    <mat-menu #matmenu3="matMenu">
+      <ng-template matMenuContent let-nameX="name" let-hobby="hobby">
+        <button mat-menu-item="">Settings for {{ nameX | titlecase }}</button>
+        <button mat-menu-item="">Log out : {{ nameX }}</button>
+        <button mat-menu-item="">{{ hobby }}</button>
+      </ng-template>
+    </mat-menu>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<button mat-flat-button="" color="warn" [mat-menu-trigger-for]="appMenu">
+  menu
+</button>
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item color="primary" [mat-menu-trigger-for]="submenu">
+    button A
+  </button>
+  <button mat-menu-item color="primary">button B</button>
+</mat-menu>
+
+<mat-menu #submenu="matMenu">
+  <button mat-menu-item="">text A.1</button>
+  <button mat-menu-item="">text A.2</button>
+  <button mat-menu-item="">text A.3</button>
+</mat-menu>
