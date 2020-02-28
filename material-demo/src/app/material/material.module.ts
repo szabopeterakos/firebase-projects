@@ -31,6 +31,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { ReactiveFormsModule } from "@angular/forms";
 
 const MaterialComponents = [
   BrowserAnimationsModule,
@@ -65,7 +66,8 @@ const MaterialComponents = [
   MatTableModule,
   MatSortModule,
   MatPaginatorModule,
-  MatBadgeModule
+  MatBadgeModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({
