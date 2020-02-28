@@ -1,1 +1,37 @@
-<p>form works!</p>
+<mat-form-field floatLabel="always" color="warn">
+  <mat-label>Name</mat-label>
+  <input type="text" matInput="" required />
+</mat-form-field>
+
+<mat-form-field floatLabel="always" hideRequiredMarker appearance="outline">
+  <mat-label>hideRequiredMarker</mat-label>
+  <input type="text" matInput="" required />
+  <mat-hint>hint text</mat-hint>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Topic</mat-label>
+  <mat-select [(value)]="selectedValue">
+    <mat-option>None</mat-option>
+    <mat-option value="A">A</mat-option>
+    <mat-option value="B">B</mat-option>
+    <mat-option value="C">C</mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-raised-button="">
+  {{ selectedValue }}
+</button>
+
+<br />
+<br />
+<form action="">
+  <mat-label>this</mat-label>
+  <mat-form-field>
+    <input type="text" matInput="" [matAutocomplete]="auto" />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displFn">
+      <mat-option *ngFor="let item of list" [value]="item">
+        {{ item.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
