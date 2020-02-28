@@ -1,7 +1,11 @@
 import { NgModule } from "@angular/core";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatCheckboxModule, MatBadgeModule } from "@angular/material";
+import {
+  MatCheckboxModule,
+  MatBadgeModule,
+  MatNativeDateModule
+} from "@angular/material";
 import { MatButtonModule } from "@angular/material";
 import { MatInputModule } from "@angular/material/input";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
@@ -67,7 +71,8 @@ const MaterialComponents = [
   MatSortModule,
   MatPaginatorModule,
   MatBadgeModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  MatNativeDateModule
 ];
 
 @NgModule({
