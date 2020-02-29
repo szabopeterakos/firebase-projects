@@ -23,8 +23,10 @@ export class FormComponent implements OnInit {
   minDate = new Date();
   constructor(private snackBar: MatSnackBar) {}
 
-  openSnack(msg, act) {
-    let snackBarRef = this.snackBar.open(msg, act, { duration: 2000 });
+  openPTSnack(msg, act) {
+    let snackBarRef = this.snackBar.openFromComponent(PTSnackBar, {
+      duration: 2000
+    });
 
     snackBarRef.afterDismissed().subscribe(d => {
       console.log("dismissed");
@@ -33,6 +35,9 @@ export class FormComponent implements OnInit {
     snackBarRef.onAction().subscribe(d => {
       console.log("hit action");
     });
+  }
+  openSnack(msg, act) {
+    let snackBarRef = this.snackBar.open(msg, act, { duration: 2000 });
   }
 
   ngOnInit() {
@@ -58,3 +63,11 @@ export class FormComponent implements OnInit {
     return subj ? subj.toUpperCase() : undefined;
   }
 }
+
+@Component({
+  selector: "pt-snackbar",
+  template: `
+    <span [style.color]="'red'">Custom PT snackbar</span>
+  `
+})
+export class PTSnackBar {}
