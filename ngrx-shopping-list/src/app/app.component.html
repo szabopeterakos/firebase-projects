@@ -2,7 +2,9 @@
   <div id="shopping-list">
     <div id="list">
       <h2>Shopping List</h2>
-
+      <span class="counter" (click)="dec()"> DECREASE </span>
+      <span class="counter">{{ counter | async }}</span>
+      <span class="counter" (click)="inc()"> INCREASE </span>
       <ul>
         <li
           *ngFor="let shopping of shoppingItems | async"
