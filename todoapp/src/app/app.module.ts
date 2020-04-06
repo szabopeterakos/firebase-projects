@@ -19,7 +19,7 @@ import { fakeBackendProvider } from "./fake-backend";
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({ todos: ToDoReducer }),
+    StoreModule.forRoot({ todoss: ToDoReducer }),
     EffectsModule.forRoot([ToDoEffects])
   ],
   providers: [fakeBackendProvider],

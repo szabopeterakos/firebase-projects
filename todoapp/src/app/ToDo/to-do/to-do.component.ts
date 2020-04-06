@@ -12,15 +12,16 @@ import * as ToDoActions from "src/app/todo.action";
   styleUrls: ["./to-do.component.css"]
 })
 export class ToDoComponent implements OnInit {
-  constructor(private store: Store<{ todos: ToDoState }>) {
-    this.todo$ = store.pipe(select("todos"));
+  constructor(private store: Store<{ todoss: ToDoState }>) {
+    this.todo$ = store.pipe(select("todoss"));
   }
 
   ngOnInit() {
     this.ToDoSubscription = this.todo$
       .pipe(
         map(x => {
-          this.ToDoList = x.ToDos;
+          console.log("ngOnInit -> x", x);
+          this.ToDoList = x.todo;
           this.todoError = x.ToDoError;
         })
       )

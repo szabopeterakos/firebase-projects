@@ -1,0 +1,59 @@
+.container {
+  color: red;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  //   background-color: rgba(0, 0, 0, 0.29);
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  transition: all 0.6s;
+  opacity: 0.8;
+  pointer-events: none;
+  transform: translate(0px, -100%);
+}
+
+.content {
+  color: green;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  width: 30vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  --height: 21.6vh;
+  color: blue;
+  height: var(--height);
+  width: 28vw;
+  margin: 8px;
+  text-align: center;
+  line-height: var(--height);
+}
+
+button {
+  width: 28vw;
+  height: 4vh;
+}
+
+.hide {
+  transition: all 0.6s;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(0px, -100%);
+}
+
+.show {
+  transition: all 0.6s;
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(0px, 0px);
+}

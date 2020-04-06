@@ -9,13 +9,13 @@ const reducer = createReducer(
   intialState,
   on(ToDoActions.GetToDoAction, state => state),
   on(ToDoActions.CreateToDoAction, (state: ToDoState, todo: ToDo) => {
-    return { ...state, ToDos: [...state.ToDos, todo], ToDoError: null };
+    return { ...state, todo: [...state.todo, todo], ToDoError: null };
   }),
   on(ToDoActions.SuccessGetToDoAction, (state: ToDoState, { payload }) => {
-    return { ...state, ToDos: payload };
+    return { ...state, todo: payload };
   }),
   on(ToDoActions.SuccessCreateToDoAction, (state: ToDoState, { payload }) => {
-    return { ...state, ToDos: [...state.ToDos, payload], ToDoError: null };
+    return { ...state, todo: [...state.todo, payload], ToDoError: null };
   }),
   on(ToDoActions.ErrorToDoAction, (state: ToDoState, error: Error) => {
     console.log(error);
