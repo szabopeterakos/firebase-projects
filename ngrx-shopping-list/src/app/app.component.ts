@@ -7,7 +7,8 @@ import { Store } from "@ngrx/store";
 import { v4 as uuid } from "uuid";
 import {
   AddItemAction,
-  RemoveItemAction,
+  DeleteItemAction,
+  LoadShoppingAction,
 } from "./store/actions/shopping.actions";
 import {
   IncreaseCounterAction,
@@ -20,7 +21,8 @@ import {
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = "ngrx-shopping-list";
+  loading$: Observable<Boolean>;
+  error$: Observable<Error>;
 
   shoppingItems: Observable<Array<ShoppingItem>>;
   counter: Observable<number>;
@@ -29,8 +31,12 @@ export class AppComponent {
   constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
-    this.shoppingItems = this.store.select((store) => store.shopping);
+    this.shoppingItems = this.store.select((store) => store.shopping.list);
+    this.loading$ = this.store.select((store) => store.shopping.loading);
+    this.error$ = this.store.select((store) => store.shopping.error);
     this.counter = this.store.select((store) => store.counter);
+
+    this.store.dispatch(new LoadShoppingAction());
   }
 
   addItem() {
@@ -42,7 +48,7 @@ export class AppComponent {
   }
 
   deleteItem(id: string) {
-    this.store.dispatch(new RemoveItemAction(id));
+    this.store.dispatch(new DeleteItemAction(id));
   }
 
   inc() {
