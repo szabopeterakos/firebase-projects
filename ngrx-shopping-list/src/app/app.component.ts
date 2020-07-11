@@ -31,7 +31,9 @@ export class AppComponent {
   constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
-    this.shoppingItems = this.store.select((store) => store.shopping.list);
+    this.shoppingItems = this.store.select((store) =>
+      store.shopping.list.length > 0 ? store.shopping.list : undefined
+    );
     this.loading$ = this.store.select((store) => store.shopping.loading);
     this.error$ = this.store.select((store) => store.shopping.error);
     this.counter = this.store.select((store) => store.counter);
