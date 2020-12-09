@@ -1,0 +1,12 @@
+.xxx{
+  height: 100px;
+  overflow-y: auto;
+}
+.yyy{
+
+  border: 1px red solid;
+}
+.main-panel {
+  height: 100px;
+  overflow-y: scroll;
+}

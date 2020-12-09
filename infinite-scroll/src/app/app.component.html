@@ -1,0 +1,16 @@
+<div class="main-panel yyy">
+  <div
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    [infiniteScrollContainer]="selector"
+    [fromRoot]="true"
+    (scrolled)="onScroll()"
+  >
+    <ul>
+      <li *ngFor="let post of posts">
+        {{ post }}
+      </li>
+    </ul>
+  </div>
+</div>
