@@ -6,9 +6,10 @@
     [infiniteScrollContainer]="selector"
     [fromRoot]="true"
     (scrolled)="onScroll()"
+    (scrolledUp)="onScrollUp()"
   >
     <ul>
-      <li *ngFor="let post of posts|async">
+      <li *ngFor="let post of posts | async">
         {{ post }}
       </li>
     </ul>

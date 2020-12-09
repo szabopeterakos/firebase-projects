@@ -16,13 +16,6 @@ export class AppComponent {
     const length = this.posts.length;
     setTimeout(() => {
       this.dataservice.loadMore();
-      // const p = " "
-      //   .repeat(10)
-      //   .split("")
-      //   .map((s, i) => i + 1 + length);
-
-      // This approach should be used to avoid creating another memory address to the array
-      // while (p.length) this.posts.push(p.shift());
     }, 1000);
   }
 
