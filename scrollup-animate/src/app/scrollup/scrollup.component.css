@@ -1,0 +1,21 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+}
+
+.scroll-to-top button {
+  font-size: 3em;
+  background: none;
+  border: none;
+  color: #01cd64;
+  cursor: pointer;
+
+}
+
+.show-scrollTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}

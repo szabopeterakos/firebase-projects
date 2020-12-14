@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'scrollup-animate';
+  name = 'Fe11owU2Er';
 }
