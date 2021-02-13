@@ -111,10 +111,14 @@
   <div class="card highlight-card card-large" [style.margin-top]="'40px'">
     <span class="cc">
       <pre>json</pre>
-      <!-- <pre>
+      <pre>
         {{ data$ | async | json }}
-      </pre> -->
-      <ng-container *ngFor="let user of data$ | async" [style.text-align]="'center'">
+      </pre>
+      <p>data</p>
+      <ng-container
+        *ngFor="let user of data$ | async"
+        [style.text-align]="'center'"
+      >
         <div>{{ user }}</div>
       </ng-container>
     </span>
