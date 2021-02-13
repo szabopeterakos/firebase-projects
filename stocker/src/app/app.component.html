@@ -111,15 +111,12 @@
   <div class="card highlight-card card-large" [style.margin-top]="'40px'">
     <span class="cc">
       <pre>json</pre>
-      <pre>
-        {{ data$ | async | json }}
-      </pre>
-      <p>data</p>
-      <ng-container
-        *ngFor="let user of data$ | async"
-        [style.text-align]="'center'"
-      >
-        <div>{{ user }}</div>
+      <p>lastPrice</p>
+      <ng-container *ngIf="data$ | async as data">
+        <div>{{ data["lastPrice"] }}</div>
+        <pre>
+          {{ data | json }}
+        </pre>
       </ng-container>
     </span>
 

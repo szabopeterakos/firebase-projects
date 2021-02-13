@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
-import { map, catchError, tap, flatMap } from "rxjs/operators";
+import { catchError, tap } from "rxjs/operators";
 import { of } from "rxjs";
 import { environment } from "../environments/environment";
 
@@ -13,7 +13,7 @@ export class AppService {
   public message$: Observable<string> = this.message.asObservable();
   // public data$: Observable<any>;
   headers: HttpHeaders = new HttpHeaders({
-    "X-RapidAPI-Key": environment.apiKey,
+    "X-RapidAPI-Key": environment.KEY,
   });
 
   constructor(private http: HttpClient) {}
