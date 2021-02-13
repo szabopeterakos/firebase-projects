@@ -110,10 +110,10 @@
   <!-- Content -->
   <div class="card highlight-card card-large" [style.margin-top]="'40px'">
     <span class="cc">
-      <pre>json</pre>
       <p>lastPrice</p>
       <ng-container *ngIf="data$ | async as data">
         <div>{{ data["lastPrice"] }}</div>
+        <pre>json</pre>
         <pre>
           {{ data | json }}
         </pre>
