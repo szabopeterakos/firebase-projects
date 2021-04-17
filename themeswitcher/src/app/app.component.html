@@ -1,17 +1,53 @@
-<mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My App</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
+<div [ngClass]="{ 'dark-theme': isDarkTheme | async }">
+  <div class="mat-app-background">
+    <mat-toolbar>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App (isDarkTheme:{{ isDarkTheme | async }})</span>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
 
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-<mat-slide-toggle>Slide me!</mat-slide-toggle>
-<mat-card>Simple card</mat-card>
+    <mat-slide-toggle
+      [checked]="isDarkTheme | async"
+      (change)="toggleTheme($event.checked)"
+      >Switch theme!</mat-slide-toggle
+    >
+    <mat-card
+      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil
+      quis vitae magni quam cumque blanditiis earum fugit doloribus! Impedit hic
+      dignissimos quibusdam sapiente. Rerum laudantium optio quasi similique
+      voluptatibus ipsa nihil, ullam pariatur sint iure eum. Quod, quo nihil.
+      Officia necessitatibus modi fuga omnis odio alias, earum obcaecati,
+      maiores fugiat ullam reiciendis cumque id. Lorem, ipsum.
+    </mat-card>
+    <h3>Flat Buttons</h3>
+    <div class="example-button-row">
+      <button mat-flat-button>Basic</button>
+      <button mat-flat-button color="primary">Primary</button>
+      <button mat-flat-button color="accent">Accent</button>
+      <button mat-flat-button color="warn">Warn</button>
+      <button mat-flat-button disabled>Disabled</button>
+      <a mat-flat-button routerLink=".">Link</a>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

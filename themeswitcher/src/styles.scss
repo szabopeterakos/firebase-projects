@@ -1,4 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// :root {
+//   height: 100%;
+//   --bg: #fafafa;
+//   --bg-panel: rgba(255, 255, 255, 1);
+//   --primary: #2ba671;
+//   --accent: rgba(184, 245, 248, 1);
+//   --color-text-grey: #707070;
+//   --color-text-black: #ffffff;
+//   --triangle: transparent linear-gradient(51deg, #e9edf8 0%, #ffffff 100%) 0% 0%
+//     no-repeat padding-box;
+//   --graph: rgba(223, 226, 234, 1);
+//   --graph-border: 1px solid rgba(223, 226, 234, 1);
+// }
+
+// :root .dark-theme {
+//   height: 100%;
+//   --bg: #303030;
+//   --bg-panel: #3a3a3a;
+//   --primary: #2ba671;
+//   --accent: rgba(184, 245, 248, 1);
+//   --color-text-grey: #707070;
+//   --color-text-black: #e1e1e1;
+//   --triangle: transparent
+//     linear-gradient(
+//       52deg,
+//       #030303 0%,
+//       #2d2d2d 36%,
+//       #373737 52%,
+//       #555555 69%,
+//       #707070 92%,
+//       #fefefe 100%
+//     )
+//     0% 0% no-repeat padding-box;
+//   --graph: #3a3a3a;
+//   --graph-border: 1px solid #707070;
+// }
