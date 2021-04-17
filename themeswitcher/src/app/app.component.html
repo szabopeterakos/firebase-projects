@@ -25,12 +25,16 @@
         <mat-icon>share</mat-icon>
       </button>
     </mat-toolbar>
-
+    <br />
+    <h3>Slider to switch</h3>
     <mat-slide-toggle
       [checked]="isDarkTheme | async"
       (change)="toggleTheme($event.checked)"
       >Switch theme!</mat-slide-toggle
     >
+    <hr />
+    <br />
+    <h3>Card</h3>
     <mat-card
       >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil
       quis vitae magni quam cumque blanditiis earum fugit doloribus! Impedit hic
@@ -39,6 +43,8 @@
       Officia necessitatibus modi fuga omnis odio alias, earum obcaecati,
       maiores fugiat ullam reiciendis cumque id. Lorem, ipsum.
     </mat-card>
+
+    <br />
     <h3>Flat Buttons</h3>
     <div class="example-button-row">
       <button mat-flat-button>Basic</button>
@@ -48,6 +54,27 @@
       <button mat-flat-button disabled>Disabled</button>
       <a mat-flat-button routerLink=".">Link</a>
     </div>
+
+    <br />
+    <h3>Sorting sort header table</h3>
+    <table matSort (matSortChange)="sortData($event)">
+      <tr>
+        <th mat-sort-header="name">Dessert (100g)</th>
+        <th mat-sort-header="calories">Calories</th>
+        <th mat-sort-header="fat">Fat (g)</th>
+        <th mat-sort-header="carbs">Carbs (g)</th>
+        <th mat-sort-header="protein">Protein (g)</th>
+      </tr>
+
+      <tr *ngFor="let dessert of sortedData">
+        <td>{{ dessert.name }}</td>
+        <td>{{ dessert.calories }}</td>
+        <td>{{ dessert.fat }}</td>
+        <td>{{ dessert.carbs }}</td>
+        <td>{{ dessert.protein }}</td>
+      </tr>
+    </table>
+
     <router-outlet></router-outlet>
   </div>
 </div>
