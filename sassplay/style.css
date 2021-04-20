@@ -1,0 +1,182 @@
+:root {
+  --white: rgba(255, 255, 255, 0.53);
+  --bg: rgba(11, 11, 11, 0.95);
+  --red: rgb(255, 79, 79);
+  --red-a: rgba(255, 79, 79, 0);
+  --orange: rgb(253, 175, 108);
+  --orange-a: rgba(253, 175, 108, 0);
+  --green: rgb(233, 254, 154);
+  --green-a: rgba(233, 254, 154, 0);
+  --blue: rgb(79, 97, 255);
+  --blue-a: rgba(79, 97, 255, 0);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("/Poppins/Poppins-ExtraLight.ttf");
+}
+
+*,
+*::before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  background: var(--bg);
+  color: var(--white);
+  font-family: "Poppins";
+}
+
+.btn-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[16];
+      grid-template-columns: repeat(16, 1fr);
+  gap: 0.81em;
+  position: relative;
+  padding-top: 3em;
+}
+
+.btn-container:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  top: 0;
+  left: 0;
+  background: repeating-linear-gradient(rgba(101, 101, 101, 0.51) 0%, rgba(101, 101, 101, 0.51) 15%, var(--bg) 15%, var(--bg) 25%);
+}
+
+.button {
+  height: 97px;
+  padding: 0em 1.5em;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1px 1px 3px 3px;
+  position: relative;
+}
+
+.button:before {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -2em;
+  left: 0;
+  color: var(--white);
+}
+
+.button:nth-child(1):before {
+  content: "NR";
+}
+
+.button:nth-child(2):before {
+  content: "KC";
+}
+
+.button:nth-child(3):before {
+  content: "CI";
+}
+
+.button:nth-child(4):before {
+  content: "DR";
+}
+
+.button:nth-child(5):before {
+  content: "HH";
+}
+
+.button:nth-child(6):before {
+  content: "H2";
+}
+
+.button:nth-child(7):before {
+  content: "CA";
+}
+
+.button:nth-child(8):before {
+  content: "KA";
+}
+
+.button:nth-child(9):before {
+  content: "KB";
+}
+
+.button:nth-child(10):before {
+  content: "KC";
+}
+
+.button:nth-child(11):before {
+  content: "KD";
+}
+
+.button:nth-child(12):before {
+  content: "BO";
+}
+
+.button:nth-child(13):before {
+  content: "PE";
+}
+
+.button:nth-child(14):before {
+  content: "TI";
+}
+
+.button:nth-child(15):before {
+  content: "AW";
+}
+
+.button:nth-child(16):before {
+  content: "SM";
+}
+
+.button:nth-child(-n + 4) {
+  background: grey;
+  background: var(--red);
+  background: var(--red) radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, var(--red) 70%);
+  -webkit-box-shadow: inset 9px 9px 1px -7px var(--red), inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35), -2px -2px 2px 0 rgba(0, 0, 0, 0.51), -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 9px 9px 1px -7px var(--red), inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35), -2px -2px 2px 0 rgba(0, 0, 0, 0.51), -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+  -o-border-image: linear-gradient(to bottom, var(--red-a), rgba(255, 255, 255, 0.73), var(--red-a)) 1 100%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(var(--red-a)), color-stop(rgba(255, 255, 255, 0.73)), to(var(--red-a))) 1 100%;
+     border-image: linear-gradient(to bottom, var(--red-a), rgba(255, 255, 255, 0.73), var(--red-a)) 1 100%;
+}
+
+.button:nth-child(5), .button:nth-child(6), .button:nth-child(7), .button:nth-child(8) {
+  background: red;
+  background: var(--orange);
+  background: var(--orange) radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, var(--orange) 70%);
+  -webkit-box-shadow: inset 9px 9px 1px -7px var(--orange), inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35), -2px -2px 2px 0 rgba(0, 0, 0, 0.51), -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 9px 9px 1px -7px var(--orange), inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35), -2px -2px 2px 0 rgba(0, 0, 0, 0.51), -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+  -o-border-image: linear-gradient(to bottom, var(--orange-a), rgba(255, 255, 255, 0.73), var(--orange-a)) 1 100%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(var(--orange-a)), color-stop(rgba(255, 255, 255, 0.73)), to(var(--orange-a))) 1 100%;
+     border-image: linear-gradient(to bottom, var(--orange-a), rgba(255, 255, 255, 0.73), var(--orange-a)) 1 100%;
+}
+
+.button:nth-child(9), .button:nth-child(10), .button:nth-child(11), .button:nth-child(12) {
+  background: green;
+  background: var(--green);
+  background: var(--green) radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, var(--green) 70%);
+  -webkit-box-shadow: inset 9px 9px 1px -7px var(--green), inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35), -2px -2px 2px 0 rgba(0, 0, 0, 0.51), -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 9px 9px 1px -7px var(--green), inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35), -2px -2px 2px 0 rgba(0, 0, 0, 0.51), -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+  -o-border-image: linear-gradient(to bottom, var(--green-a), rgba(255, 255, 255, 0.73), var(--green-a)) 1 100%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(var(--green-a)), color-stop(rgba(255, 255, 255, 0.73)), to(var(--green-a))) 1 100%;
+     border-image: linear-gradient(to bottom, var(--green-a), rgba(255, 255, 255, 0.73), var(--green-a)) 1 100%;
+}
+
+.button:nth-child(n + 13) {
+  background: blue;
+  background: var(--blue);
+  background: var(--blue) radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, var(--blue) 70%);
+  -webkit-box-shadow: inset 9px 9px 1px -7px var(--blue), inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35), -2px -2px 2px 0 rgba(0, 0, 0, 0.51), -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 9px 9px 1px -7px var(--blue), inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35), -2px -2px 2px 0 rgba(0, 0, 0, 0.51), -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+  -o-border-image: linear-gradient(to bottom, var(--blue-a), rgba(255, 255, 255, 0.73), var(--blue-a)) 1 100%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(var(--blue-a)), color-stop(rgba(255, 255, 255, 0.73)), to(var(--blue-a))) 1 100%;
+     border-image: linear-gradient(to bottom, var(--blue-a), rgba(255, 255, 255, 0.73), var(--blue-a)) 1 100%;
+}
+/*# sourceMappingURL=style.css.map */

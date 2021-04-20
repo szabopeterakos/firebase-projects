@@ -1,0 +1,158 @@
+:root {
+  --white: rgba(255, 255, 255, 0.53);
+  --bg: rgba(11, 11, 11, 0.95);
+  --red: rgb(255, 79, 79);
+  --red-a: rgba(255, 79, 79, 0);
+  --orange: rgb(253, 175, 108);
+  --orange-a: rgba(253, 175, 108, 0);
+  --green: rgb(233, 254, 154);
+  --green-a: rgba(233, 254, 154, 0);
+  --blue: rgb(79, 97, 255);
+  --blue-a: rgba(79, 97, 255, 0);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("/Poppins/Poppins-ExtraLight.ttf");
+}
+
+@mixin btn-style($c, $ca) {
+  background: $c;
+  background: $c radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, $c 70%); // light reflection effect
+  box-shadow: 
+    inset 9px 9px 1px -7px $c,
+    inset -8px -8px 4px -7px rgba(255, 255, 255, 0.35),
+    -2px -2px 2px 0 rgba(0, 0, 0, 0.51), 
+    -10px -10px 7px 1px rgba(0, 0, 0, 0.2);
+
+  border-image: linear-gradient(to bottom, $ca, rgba(255, 255, 255, 0.73), $ca)
+    1 100%;
+}
+
+*,
+*::before,
+*:after {
+  box-sizing: border-box; // flush incorrect weight
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  background: var(--bg);
+  color: var(--white);
+  font-family: "Poppins";
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 0.81em;
+  position: relative;
+  padding-top: 3em;
+  &:before {
+    content: "";
+    position: absolute; // connected to the parent element if this is ebs that should be rel to poper working
+    width: 100%;
+    height: 40px;
+    top: 0;
+    left: 0;
+    background: repeating-linear-gradient(
+      rgba(101, 101, 101, 0.51) 0%,
+      rgba(101, 101, 101, 0.51) 15%,
+      var(--bg) 15%,
+      var(--bg) 25%
+    );
+  }
+}
+
+.button {
+  height: 97px;
+  padding: 0em 1.5em;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1px 1px 3px 3px;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: -2em;
+    left: 0;
+    color: var(--white);
+  }
+
+  &:nth-child(1):before {
+    content: "NR";
+  }
+  &:nth-child(2):before {
+    content: "KC";
+  }
+  &:nth-child(3):before {
+    content: "CI";
+  }
+  &:nth-child(4):before {
+    content: "DR";
+  }
+  &:nth-child(5):before {
+    content: "HH";
+  }
+  &:nth-child(6):before {
+    content: "H2";
+  }
+  &:nth-child(7):before {
+    content: "CA";
+  }
+  &:nth-child(8):before {
+    content: "KA";
+  }
+  &:nth-child(9):before {
+    content: "KB";
+  }
+  &:nth-child(10):before {
+    content: "KC";
+  }
+  &:nth-child(11):before {
+    content: "KD";
+  }
+  &:nth-child(12):before {
+    content: "BO";
+  }
+  &:nth-child(13):before {
+    content: "PE";
+  }
+  &:nth-child(14):before {
+    content: "TI";
+  }
+  &:nth-child(15):before {
+    content: "AW";
+  }
+  &:nth-child(16):before {
+    content: "SM";
+  }
+
+  &:nth-child(-n + 4) {
+    background: grey;
+    @include btn-style(var(--red), var(--red-a));
+  }
+  &:nth-child(5),
+  &:nth-child(6),
+  &:nth-child(7),
+  &:nth-child(8) {
+    background: red;
+    @include btn-style(var(--orange), var(--orange-a));
+  }
+  &:nth-child(9),
+  &:nth-child(10),
+  &:nth-child(11),
+  &:nth-child(12) {
+    background: green;
+    @include btn-style(var(--green), var(--green-a));
+  }
+  &:nth-child(n + 13) {
+    background: blue;
+    @include btn-style(var(--blue), var(--blue-a));
+  }
+}
