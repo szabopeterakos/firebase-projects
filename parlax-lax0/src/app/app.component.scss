@@ -1,0 +1,33 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // https://www.reddit.com/r/css/comments/7ym886/how_to_center_align_text_inside_a_css_grid_cell/
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    display: inline-block;
+  }
+
+}
+.lorem{
+  height: 100vh;
+  opacity: 0.1;
+  z-index: -1;
+}
