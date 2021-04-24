@@ -8,3 +8,75 @@
     opacity: 1;
   }
 }
+
+.header {
+  position: fixed;
+  height: 100px;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    opacity: 0.7;
+  }
+  .header_inner {
+    color: white;
+    z-index: 110;
+  }
+  .logo {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 210px;
+    height: auto;
+  }
+  .navigation {
+    position: absolute;
+    box-sizing: border-box;
+    top: 38px;
+    height: 30px;
+    left: 285px;
+    .nav_links {
+      position: relative;
+      list-style-type: none;
+      font-size: 14px;
+      font-weight: bold;
+      li {
+        display: inline-block;
+        position: relative;
+        margin: 0 12px 0 0;
+        height: 30px;
+        line-height: 2; // In some cases, the parent element will have a fixed height. For vertical centering, all you have to do is set a line-height value on the child element equal to the fixed height of the parent element.
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: white;
+          opacity: 0;
+          transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+          transform: translateY(-10px) scaleX(0);
+          transform-origin: left center;
+        }
+      }
+      li:hover {
+        cursor: pointer;
+        &::after {
+          opacity: 1;
+          transform: translateY(-10px) scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+.none {
+  display: none;
+}
