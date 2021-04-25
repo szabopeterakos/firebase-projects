@@ -10,7 +10,7 @@ $light_a: rgba(255, 255, 255, 0.28);
 $dark: black;
 
 body {
-  background-color: rgba(20, 20, 20, 0.9);
+  background-color: $dark;
 }
 
 // based on : https://www.digitalocean.com/community/tutorials/css-pure-css-parallax
@@ -19,12 +19,13 @@ body {
   height: 100vh; // The height of the wrapper needs to be set to a fixed value for the effect to work.
   overflow-x: hidden;
   overflow-y: visible;
+  // border: 2px green solid;
   perspective: 2px; // The perspective property simulates the distance from the viewport to the pseudo-elements you will create and transform further down in the CSS
 }
 
 .section {
   position: relative; // Set a position of relative so that the child, .parallax::after can be absolutely positioned relative to the parent element .section.
-  height: 40vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +42,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  border: 1px solid red;
+  // border: 1px solid red;
   transform: translateZ(-1px) scale(1.5); // moves the pseudo-element back away from the camera on the z-index, then scales it back up to fill the viewport.
   //   background-size: 100%;
   z-index: -1;
@@ -56,9 +57,123 @@ body {
 .bg1::after {
   background-image: url("./hls-resized-2.webp");
   background-size: cover;
+  background-position: right;
+  animation: zigzag 10s linear infinite;
+  animation-direction: alternate;
+}
+@keyframes zigzag {
+  from {
+    transform: translateX(-10px) translateZ(-1px) scale(1.5);
+  }
+  to {
+    transform: translateX(10px) translateZ(-1px) scale(1.5);
+  }
 }
 
 .bg2::after {
   background-image: url("./Desktop_Docking_v2.webp");
   background-size: cover;
+}
+
+h1,
+h3,
+p {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 100px;
+  line-height: 80px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+p {
+  display: inline-block;
+  font-style: italic;
+  opacity: 0.8;
+  text-transform: none;
+}
+
+.element {
+  text-align: right;
+  margin: 0 20vw;
+}
+
+// text animation
+.static {
+  h1 {
+    animation: visible 1s linear;
+    animation-play-state: paused;
+    animation-delay: calc((var(--scroll)) * -10s);
+    transform: translateY(10px);
+  }
+  p {
+    animation: visible 1s linear;
+    animation-play-state: paused;
+    animation-delay: calc((var(--scroll) * 2) * -1s);
+    transform: translateY(10px);
+  }
+  @keyframes visible {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+}
+
+.bg2 {
+  h1 {
+    animation: visible 1s linear;
+    animation-play-state: paused;
+    animation-delay: calc((var(--scroll)) * -1s);
+    transform: translateY(10px);
+  }
+  p {
+    animation: visible 1s linear;
+    animation-play-state: paused;
+    animation-delay: calc((var(--scroll) * -1s - 0.8s));
+    transform: translateY(0px);
+  }
+  @keyframes visible {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+}
+
+.bg1 {
+  h1 {
+    animation: visible_first 2s ease-in 1;
+    animation-direction: alternate;
+    transform: translateY(0px);
+  }
+  p {
+    animation: visible_first 2s 1;
+    animation-timing-function: ease-in;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  @keyframes visible_first {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.8;
+      transform: translateY(0px);
+    }
+  }
 }
