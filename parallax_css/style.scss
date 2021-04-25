@@ -1,0 +1,64 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+}
+
+$light: white;
+$light_a: rgba(255, 255, 255, 0.28);
+$dark: black;
+
+body {
+  background-color: rgba(20, 20, 20, 0.9);
+}
+
+// based on : https://www.digitalocean.com/community/tutorials/css-pure-css-parallax
+
+.wrapper {
+  height: 100vh; // The height of the wrapper needs to be set to a fixed value for the effect to work.
+  overflow-x: hidden;
+  overflow-y: visible;
+  perspective: 2px; // The perspective property simulates the distance from the viewport to the pseudo-elements you will create and transform further down in the CSS
+}
+
+.section {
+  position: relative; // Set a position of relative so that the child, .parallax::after can be absolutely positioned relative to the parent element .section.
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $light;
+  text-shadow: 0 0 5px $dark;
+  text-transform: lowercase;
+}
+
+.parallax::after {
+  // The pseudo-element is the last child of the element with the class .parallax.
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid red;
+  transform: translateZ(-1px) scale(1.5); // moves the pseudo-element back away from the camera on the z-index, then scales it back up to fill the viewport.
+  //   background-size: 100%;
+  z-index: -1;
+  // Because the pseudo-element is further away, it appears to move more slowly.
+  // The speed of the effect can be altered by adjusting the values of translateZ, scale, and perspective while keeping them at the same proportions.
+}
+
+.static {
+  background-color: $dark;
+}
+
+.bg1::after {
+  background-image: url("./hls-resized-2.webp");
+  background-size: cover;
+}
+
+.bg2::after {
+  background-image: url("./Desktop_Docking_v2.webp");
+  background-size: cover;
+}
