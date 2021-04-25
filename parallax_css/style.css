@@ -48,6 +48,8 @@ body {
 
 .static {
   background-color: black;
+  background-image: -webkit-gradient(linear, left top, right top, from(#1b1b1b), to(#040404));
+  background-image: linear-gradient(to right, #1b1b1b, #040404);
 }
 
 .bg1::after {
@@ -62,23 +64,23 @@ body {
 
 @-webkit-keyframes zigzag {
   from {
-    -webkit-transform: translateX(-10px) translateZ(-1px) scale(1.5);
-            transform: translateX(-10px) translateZ(-1px) scale(1.5);
+    -webkit-transform: translateX(-10px) translateZ(-1px) scale(1.5) translateY(-30px);
+            transform: translateX(-10px) translateZ(-1px) scale(1.5) translateY(-30px);
   }
   to {
-    -webkit-transform: translateX(10px) translateZ(-1px) scale(1.5);
-            transform: translateX(10px) translateZ(-1px) scale(1.5);
+    -webkit-transform: translateX(10px) translateZ(-1px) scale(1.5) translateY(-30px);
+            transform: translateX(10px) translateZ(-1px) scale(1.5) translateY(-30px);
   }
 }
 
 @keyframes zigzag {
   from {
-    -webkit-transform: translateX(-10px) translateZ(-1px) scale(1.5);
-            transform: translateX(-10px) translateZ(-1px) scale(1.5);
+    -webkit-transform: translateX(-10px) translateZ(-1px) scale(1.5) translateY(-30px);
+            transform: translateX(-10px) translateZ(-1px) scale(1.5) translateY(-30px);
   }
   to {
-    -webkit-transform: translateX(10px) translateZ(-1px) scale(1.5);
-            transform: translateX(10px) translateZ(-1px) scale(1.5);
+    -webkit-transform: translateX(10px) translateZ(-1px) scale(1.5) translateY(-30px);
+            transform: translateX(10px) translateZ(-1px) scale(1.5) translateY(-30px);
   }
 }
 
@@ -192,6 +194,33 @@ p {
     opacity: 1;
     -webkit-transform: translateY(10px);
             transform: translateY(10px);
+  }
+}
+
+.bg2::after {
+  -webkit-animation: rotate 400s linear infinite;
+          animation: rotate 400s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 

@@ -52,6 +52,7 @@ body {
 
 .static {
   background-color: $dark;
+  background-image: linear-gradient(to right, rgb(27, 27, 27), rgb(4, 4, 4));
 }
 
 .bg1::after {
@@ -63,10 +64,10 @@ body {
 }
 @keyframes zigzag {
   from {
-    transform: translateX(-10px) translateZ(-1px) scale(1.5);
+    transform: translateX(-10px) translateZ(-1px) scale(1.5) translateY(-30px);
   }
   to {
-    transform: translateX(10px) translateZ(-1px) scale(1.5);
+    transform: translateX(10px) translateZ(-1px) scale(1.5) translateY(-30px);
   }
 }
 
@@ -147,6 +148,19 @@ p {
     to {
       opacity: 1;
       transform: translateY(10px);
+    }
+  }
+
+  &::after {
+    animation: rotate 400s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 }
