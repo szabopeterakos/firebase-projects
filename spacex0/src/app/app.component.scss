@@ -61,16 +61,20 @@
           height: 1px;
           background: white;
           opacity: 0;
-          transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-          transform: translateY(-10px) scaleX(0);
+          transform: translateY(-8px) scaleX(0);
           transform-origin: left center;
+          // hover off
+          transition: .9s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
       }
       li:hover {
         cursor: pointer;
         &::after {
           opacity: 1;
-          transform: translateY(-10px) scaleX(1);
+          transform-origin: right center;
+          transform: translateY(-8px) scaleX(1);
+          // hover on
+          transition: .35s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
       }
     }
