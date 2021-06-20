@@ -1,0 +1,48 @@
+<form
+  [formGroup]="registrationForm"
+  (ngSubmit)="onSubmit(); heroForm.reset()"
+  #heroForm="ngForm"
+  class="container"
+>
+  <!-- <h1 class="row title">WEIGHT0</h1> -->
+  <img class="row title" src="./../assets/WEIGHT0.svg" />
+
+  <mat-form-field class="row" appearance="outline">
+    <mat-label>Hit todays weight</mat-label>
+    <input
+      id="weigth"
+      name="weigth"
+      matInput
+      required
+      formControlName="weight"
+    />
+    <span matSuffix>kg&nbsp;</span>
+  </mat-form-field>
+
+  <mat-form-field class="row" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input
+      id="date"
+      name="date"
+      matInput
+      [matDatepicker]="picker"
+      required
+      formControlName="date"
+      [disabled]="true"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker disabled="false"></mat-datepicker>
+  </mat-form-field>
+
+  <button
+    class="row submit"
+    [disabled]="!registrationForm.valid"
+    mat-stroked-button
+    type="submit"
+  >
+    SEND
+  </button>
+  <div class="chart">
+    <canvas id="myChart" style="height: 100%; width: 100%"></canvas>
+  </div>
+</form>
