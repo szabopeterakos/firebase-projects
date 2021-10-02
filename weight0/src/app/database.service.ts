@@ -16,7 +16,7 @@ export interface WeightRecord {
   providedIn: 'root',
 })
 export class DatabaseService {
-  BaseUrl = 'http://localhost:3000/records';
+  BaseUrl = 'https://secret-tundra-40269.herokuapp.com/records';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
